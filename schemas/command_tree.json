@@ -1,0 +1,2380 @@
+{
+  "version": 1,
+  "base_path": "/api/v1",
+  "resources": [
+    {
+      "name": "asset",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/assets/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/assets/<uuid:asset_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "asset_id",
+              "flag": "asset-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/assets/<uuid:asset_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "asset_id",
+              "flag": "asset-id"
+            }
+          ]
+        },
+        {
+          "name": "user-assets-create",
+          "method": "POST",
+          "path": "assets/user-assets/",
+          "deprecated": false,
+          "params": []
+        },
+        {
+          "name": "user-assets-delete",
+          "method": "DELETE",
+          "path": "assets/user-assets/<uuid:asset_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "asset_id",
+              "flag": "asset-id"
+            }
+          ]
+        },
+        {
+          "name": "user-assets-server-create",
+          "method": "POST",
+          "path": "assets/user-assets/server/",
+          "deprecated": false,
+          "params": []
+        },
+        {
+          "name": "user-assets-server-delete",
+          "method": "DELETE",
+          "path": "assets/user-assets/<uuid:asset_id>/server/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "asset_id",
+              "flag": "asset-id"
+            }
+          ]
+        },
+        {
+          "name": "user-assets-server-update",
+          "method": "PATCH",
+          "path": "assets/user-assets/<uuid:asset_id>/server/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "asset_id",
+              "flag": "asset-id"
+            }
+          ]
+        },
+        {
+          "name": "user-assets-update",
+          "method": "PATCH",
+          "path": "assets/user-assets/<uuid:asset_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "asset_id",
+              "flag": "asset-id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cycle",
+      "ops": [
+        {
+          "name": "archive",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:cycle_id>/archive/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            }
+          ]
+        },
+        {
+          "name": "archived-cycles-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/archived-cycles/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "archived-cycles-unarchive",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/archived-cycles/<uuid:cycle_id>/unarchive/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "cycle-issues-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:cycle_id>/cycle-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            }
+          ]
+        },
+        {
+          "name": "cycle-issues-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:cycle_id>/cycle-issues/<uuid:issue_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "cycle-issues-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:cycle_id>/cycle-issues/<uuid:issue_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "cycle-issues-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:cycle_id>/cycle-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "transfer-issues",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:cycle_id>/transfer-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "cycle_id",
+              "flag": "cycle-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/cycles/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "intake",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/intake-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/intake-issues/<uuid:issue_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/intake-issues/<uuid:issue_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/intake-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/intake-issues/<uuid:issue_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "invite",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/invitations/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/invitations/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/invitations/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/invitations/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/invitations/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "issue",
+      "ops": [
+        {
+          "name": "activities-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/activities/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "activities-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/activities/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "by-identifier",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/issues/<str:project_identifier>-<str:issue_identifier>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_identifier",
+              "flag": "project-identifier"
+            },
+            {
+              "name": "issue_identifier",
+              "flag": "issue-identifier"
+            }
+          ]
+        },
+        {
+          "name": "comments-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/comments/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "comments-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/comments/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "comments-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/comments/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "comments-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/comments/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "comments-update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/comments/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "issue-attachments-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/issue-attachments/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "issue-attachments-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/issue-attachments/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "issue-attachments-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/issue-attachments/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "issue-attachments-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/issue-attachments/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "issue-attachments-update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/issue-attachments/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "links-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/links/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "links-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/links/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "links-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/links/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "links-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/links/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "links-update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:issue_id>/links/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "search",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/issues/search/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/issues/<uuid:pk>/",
+          "deprecated": true,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/labels/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/labels/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/labels/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/labels/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/labels/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "member",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/members/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "create-post",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/project-members/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/members/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "delete-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/project-members/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/members/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/project-members/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/members/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "list-2",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/members/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "list-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/project-members/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/members/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "update-patch",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/project-members/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "module",
+      "ops": [
+        {
+          "name": "archive",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:pk>/archive/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "archived-modules-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/archived-modules/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "archived-modules-unarchive",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/archived-modules/<uuid:pk>/unarchive/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "module-issues-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:module_id>/module-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "module_id",
+              "flag": "module-id"
+            }
+          ]
+        },
+        {
+          "name": "module-issues-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:module_id>/module-issues/<uuid:issue_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "module_id",
+              "flag": "module-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "module-issues-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:module_id>/module-issues/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "module_id",
+              "flag": "module-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/modules/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "project",
+      "ops": [
+        {
+          "name": "archive",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/archive/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "unarchive",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/archive/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "state",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/states/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/states/<uuid:state_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "state_id",
+              "flag": "state-id"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/states/<uuid:state_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "state_id",
+              "flag": "state-id"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/states/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/states/<uuid:state_id>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "state_id",
+              "flag": "state-id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sticky",
+      "ops": [
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/stickies/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/stickies/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/stickies/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/stickies/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/stickies/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "ops": [
+        {
+          "name": "me-list",
+          "method": "GET",
+          "path": "users/me/",
+          "deprecated": false,
+          "params": []
+        }
+      ]
+    },
+    {
+      "name": "work-item",
+      "ops": [
+        {
+          "name": "activities-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/activities/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "activities-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/activities/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "attachments-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/attachments/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "attachments-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/attachments/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "attachments-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/attachments/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "attachments-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/attachments/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "attachments-update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/attachments/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "by-identifier",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/work-items/<str:project_identifier>-<str:issue_identifier>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_identifier",
+              "flag": "project-identifier"
+            },
+            {
+              "name": "issue_identifier",
+              "flag": "issue-identifier"
+            }
+          ]
+        },
+        {
+          "name": "comments-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/comments/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "comments-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/comments/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "comments-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/comments/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "comments-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/comments/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "comments-update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/comments/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "links-create",
+          "method": "POST",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/links/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "links-delete",
+          "method": "DELETE",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/links/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "links-get",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/links/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "links-list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/links/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            }
+          ]
+        },
+        {
+          "name": "links-update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:issue_id>/links/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "issue_id",
+              "flag": "issue-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            }
+          ]
+        },
+        {
+          "name": "search",
+          "method": "GET",
+          "path": "workspaces/<str:slug>/work-items/search/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            }
+          ]
+        },
+        {
+          "name": "update",
+          "method": "PATCH",
+          "path": "workspaces/<str:slug>/projects/<uuid:project_id>/work-items/<uuid:pk>/",
+          "deprecated": false,
+          "params": [
+            {
+              "name": "slug",
+              "flag": "slug"
+            },
+            {
+              "name": "project_id",
+              "flag": "project-id"
+            },
+            {
+              "name": "pk",
+              "flag": "pk"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
