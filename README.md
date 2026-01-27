@@ -4,7 +4,7 @@ Auto-generated Plane CLI from Plane REST API URL patterns. Designed for LLM disc
 
 ## Install
 
-### Install script (macOS arm64 only)
+### Install script (macOS arm64 + Linux x86_64)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/radjathaher/plane-cli/main/scripts/install.sh | bash
