@@ -59,8 +59,8 @@ fn run() -> Result<()> {
     let path = build_path(&op.path, &params)?;
     let url = join_url(&api_url, &base_path, &path);
 
-    let query = build_query_params(&matches)?;
-    let body = read_body(&matches)?;
+    let query = build_query_params(op_matches)?;
+    let body = read_body(op_matches)?;
 
     let client = HttpClient::new(api_key)?;
     let response = client.execute(&op.method, &url, &query, body)?;
@@ -401,7 +401,7 @@ fn find_byte(haystack: &[u8], needle: u8, start: usize) -> Option<usize> {
 fn join_url(base: &str, base_path: &str, path: &str) -> String {
     let base = base.trim_end_matches('/');
     let base_path = base_path.trim_matches('/');
-    let path = path.trim_matches('/');
+    let path = path.trim_start_matches('/');
 
     if base_path.is_empty() {
         format!("{base}/{path}")
