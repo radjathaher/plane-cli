@@ -32,13 +32,19 @@ Get a Plane API key and set it in your shell:
 export PLANE_API_KEY="..."
 ```
 
-Optional overrides:
+Canonical base:
 
 ```bash
-export PLANE_API_URL="https://api.plane.so"
+export PLANE_BASE_URL="https://plane.cakrawala.ai"
 export PLANE_API_BASE_PATH="/api/v1"
+export PLANE_API_URL="https://api.plane.so"
 export PLANE_WORKSPACE="my-workspace"
 ```
+
+Notes:
+
+- If `PLANE_BASE_URL` includes a path (e.g. `https://host/api/v1`), that path overrides `PLANE_API_BASE_PATH`.
+- `PLANE_API_URL` + `PLANE_API_BASE_PATH` are used only when `PLANE_BASE_URL` is unset.
 
 ## Discovery (LLM-friendly)
 

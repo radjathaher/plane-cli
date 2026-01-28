@@ -36,8 +36,7 @@ fn run() -> Result<()> {
     let include_deprecated = matches.get_flag("include-deprecated");
 
     let api_key = env::var("PLANE_API_KEY").context("PLANE_API_KEY missing")?;
-    let api_url = env::var("PLANE_API_URL").unwrap_or_else(|_| "https://api.plane.so".to_string());
-    let base_path = env::var("PLANE_API_BASE_PATH").unwrap_or_else(|_| tree.base_path.clone());
+    let (api_url, base_path) = resolve_api_base(&tree)?;
 
     let pretty = matches.get_flag("pretty");
     let raw = matches.get_flag("raw");
@@ -308,8 +307,7 @@ fn handle_tree(tree: &CommandTree, matches: &clap::ArgMatches) -> Result<()> {
 
 fn handle_request(tree: &CommandTree, matches: &clap::ArgMatches) -> Result<()> {
     let api_key = env::var("PLANE_API_KEY").context("PLANE_API_KEY missing")?;
-    let api_url = env::var("PLANE_API_URL").unwrap_or_else(|_| "https://api.plane.so".to_string());
-    let base_path = env::var("PLANE_API_BASE_PATH").unwrap_or_else(|_| tree.base_path.clone());
+    let (api_url, base_path) = resolve_api_base(&tree)?;
 
     let method = matches
         .get_one::<String>("method")
@@ -501,4 +499,49 @@ fn write_stdout_line(value: &str) -> Result<()> {
         return Err(err.into());
     }
     Ok(())
+}
+
+fn resolve_api_base(tree: &CommandTree) -> Result<(String, String)> {
+    if let Ok(base_url) = env::var("PLANE_BASE_URL") {
+        return split_base_url(&base_url, &tree.base_path);
+    }
+
+    let api_url = env::var("PLANE_API_URL").unwrap_or_else(|_| "https://api.plane.so".to_string());
+    let base_path = env::var("PLANE_API_BASE_PATH").unwrap_or_else(|_| tree.base_path.clone());
+    Ok((api_url, base_path))
+}
+
+fn split_base_url(base_url: &str, default_path: &str) -> Result<(String, String)> {
+    let trimmed = base_url.trim().trim_end_matches('/');
+    if trimmed.is_empty() {
+        return Err(anyhow!("PLANE_BASE_URL empty"));
+    }
+
+    let scheme_idx = trimmed
+        .find("://")
+        .ok_or_else(|| anyhow!("PLANE_BASE_URL must include scheme"))?;
+    let path_idx = trimmed[scheme_idx + 3..]
+        .find('/')
+        .map(|idx| idx + scheme_idx + 3);
+
+    let api_url = match path_idx {
+        Some(idx) => trimmed[..idx].to_string(),
+        None => trimmed.to_string(),
+    };
+
+    let base_path = match path_idx {
+        Some(idx) => {
+            let mut path = trimmed[idx..].to_string();
+            if path.is_empty() {
+                path = default_path.to_string();
+            }
+            if !path.starts_with('/') {
+                path.insert(0, '/');
+            }
+            path
+        }
+        None => default_path.to_string(),
+    };
+
+    Ok((api_url, base_path))
 }
