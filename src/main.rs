@@ -1,5 +1,7 @@
 mod command_tree;
 mod http;
+#[cfg(test)]
+mod tests;
 
 use anyhow::{Context, Result, anyhow};
 use clap::{Arg, ArgAction, Command};
